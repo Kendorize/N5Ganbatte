@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="id"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
+<meta name="mobile-web-app-capable" content="yes">
+<title>🎌 N5 Ganbarimashou 🎌</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic:wght@400;700;900&display=swap">
+<style>
+:root{--ink:#7a3b55;--soft:#b5687f;--card:#fffafcdd;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+*{box-sizing:border-box}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+body{margin:0;min-height:100vh;font-family:'Zen Maru Gothic','Hiragino Maru Gothic ProN','Yu Gothic',system-ui,sans-serif;color:var(--ink);background:linear-gradient(160deg,#ffe3ee,#ffd0e2 45%,#ffe9f1);background-attachment:scroll;-webkit-text-size-adjust:100%;text-size-adjust:100%;-webkit-tap-highlight-color:transparent;overflow-x:hidden}
+.petal{position:fixed;top:-40px;pointer-events:none;z-index:0;opacity:.75;animation:fall linear infinite}
+@keyframes fall{0%{transform:translate(0,0) rotate(0)}25%{transform:translate(35px,28vh) rotate(90deg)}50%{transform:translate(-25px,56vh) rotate(180deg)}75%{transform:translate(30px,84vh) rotate(270deg)}100%{transform:translate(-10px,112vh) rotate(360deg)}}}
+header{text-align:center;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:26px 14px 6px;position:relative;z-index:1}
+.jp{display:flex;justify-content:center;align-items:center;gap:12px;width:100%;text-align:center;font-size:clamp(26px,7vw,42px);font-weight:900;margin:0;letter-spacing:1px}
+.flag{display:inline-block;transform-origin:left center;animation:wave 1.6s ease-in-out infinite;filter:drop-shadow(2px 3px 2px #c4577f33)}
+@keyframes wave{0%,100%{transform:perspective(200px) rotateY(-14deg) skewY(-5deg)}50%{transform:perspective(200px) rotateY(14deg) skewY(5deg) scaleX(.94)}}}
+.sub{font-size:14px;font-weight:700;color:var(--soft);margin:4px 0 0}
+nav{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;display:flex;gap:8px;justify-content:center;flex-wrap:wrap;padding:12px 10px}
+nav button{min-height:44px;touch-action:manipulation;font:inherit;font-weight:700;border:2px solid #fff;background:#fff8;color:var(--ink);padding:9px 16px;border-radius:99px;cursor:pointer;-webkit-tap-highlight-color:transparent;touch-action:manipulation;backdrop-filter:blur(6px)}
+nav button.on{background:#ff9fc0;color:#fff;box-shadow:0 4px 12px #ff9fc055}
+main{position:relative;z-index:1;max-width:980px;margin:0 auto;padding:6px 14px calc(40px + env(safe-area-inset-bottom,0px))}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(88px,1fr));gap:10px}
+.k{background:var(--card);border-radius:18px;padding:12px 4px;text-align:center;cursor:pointer;-webkit-tap-highlight-color:transparent;touch-action:manipulation;border:2px solid #fff;font:inherit;color:var(--ink)}
+.k b{display:block;font-size:34px}.k span{font-size:13px;color:var(--soft);font-weight:700}
+.k:active{transform:scale(.94)}
+.vgrid{display:grid;grid-template-columns:1fr;gap:12px;max-width:720px;margin:0 auto}
+@media(min-width:600px){.vgrid{grid-template-columns:repeat(2,1fr)}}
+.v{background:var(--card);border-radius:22px;padding:14px;border:2px solid #fff;text-align:center}
+.v .e{font-size:40px}.v .kj{font-size:34px;font-weight:900;margin:2px 0}
+.v .m{font-weight:700;color:var(--soft);margin:2px 0 8px}
+.row{display:flex;gap:6px;justify-content:center;flex-wrap:wrap;align-items:center}
+.sp{cursor:pointer;-webkit-tap-highlight-color:transparent;touch-action:manipulation;background:#ffe0ec;border-radius:12px;padding:5px 10px;font-size:15px;font-weight:700;filter:blur(5px);transition:.25s;user-select:none}
+.sp.on{filter:none;background:#fff0f6}
+.yo{font-size:18px;font-weight:700;padding:5px 4px}
+.pl{border:0;min-width:44px;min-height:44px;touch-action:manipulation;background:#ffb7d0;color:#fff;border-radius:50%;width:36px;height:36px;font-size:17px;cursor:pointer}
+.q{background:var(--card);border-radius:26px;padding:18px;text-align:center;border:2px solid #fff;max-width:560px;margin:0 auto}
+.q .e{font-size:52px}.q .kj{font-size:44px;font-weight:900}
+.opts{display:grid;gap:10px;margin-top:14px}
+.opt{font:inherit;font-size:18px;font-weight:700;border:3px solid transparent;border-radius:18px;padding:13px;cursor:pointer}
+.opt.ok{border-color:#4caf8a;outline:3px solid #b8f0d6}.opt.no{opacity:.45;text-decoration:line-through}
+.nx{min-height:44px;margin-top:14px;font:inherit;font-weight:900;border:0;background:#ff9fc0;color:#fff;padding:11px 24px;border-radius:99px;cursor:pointer}
+.sc{font-weight:700;color:var(--soft);margin-bottom:6px}
+h2{text-align:center;margin:6px 0 12px;font-size:20px}
+.hint{text-align:center;font-size:13px;color:var(--soft);margin:0 0 12px}
+</style></head><body>
+<header>
+<p id="iosHint" style="font-size:12px;color:#b5687f;margin:0 0 6px;display:none">📱 Jika audio tidak berbunyi, tap layar sekali lalu coba tombol 🔊 lagi.</p>
+<h1 class="jp"><span class="flag">🎌</span> N5 Ganbarimashou <span class="flag" style="animation-delay:-.8s">🎌</span></h1>
+</header>
+<nav id="nav"></nav>
+<main id="main"></main>
+<script>
+const HIRA="あいうえおかきくけこさしすせそたちつてとなにぬねのはひふへほまみむめもやゆよらりるれろわをん";
+const ROM="a i u e o ka ki ku ke ko sa shi su se so ta chi tsu te to na ni nu ne no ha hi fu he ho ma mi mu me mo ya yu yo ra ri ru re ro wa wo n".split(" ");
+const VOC=`🍚|ご飯|ごはん|gohan|nasi / makanan
+💧|水|みず|mizu|air
+🍵|お茶|おちゃ|ocha|teh
+🐟|魚|さかな|sakana|ikan
+🥩|肉|にく|niku|daging
+🥚|卵|たまご|tamago|telur
+🐶|犬|いぬ|inu|anjing
+🐱|猫|ねこ|neko|kucing
+🐦|鳥|とり|tori|burung
+🌸|花|はな|hana|bunga
+⛰️|山|やま|yama|gunung
+🏞️|川|かわ|kawa|sungai
+🌊|海|うみ|umi|laut
+☀️|日|ひ|hi|matahari / hari
+🌙|月|つき|tsuki|bulan
+🔥|火|ひ|hi|api
+🌧️|雨|あめ|ame|hujan
+❄️|雪|ゆき|yuki|salju
+🏠|家|いえ|ie|rumah
+🏫|学校|がっこう|gakkou|sekolah
+🚉|駅|えき|eki|stasiun
+🚗|車|くるま|kuruma|mobil
+📚|本|ほん|hon|buku
+👩‍🏫|先生|せんせい|sensei|guru
+🎒|学生|がくせい|gakusei|pelajar
+👫|友達|ともだち|tomodachi|teman
+🧑|人|ひと|hito|orang
+👁️|目|め|me|mata
+👂|耳|みみ|mimi|telinga
+👄|口|くち|kuchi|mulut
+✋|手|て|te|tangan
+🦶|足|あし|ashi|kaki
+📅|今日|きょう|kyou|hari ini
+🌤️|明日|あした|ashita|besok
+🌅|朝|あさ|asa|pagi
+🌃|夜|よる|yoru|malam
+1️⃣|一|いち|ichi|satu
+2️⃣|二|に|ni|dua
+3️⃣|三|さん|san|tiga
+🔟|十|じゅう|juu|sepuluh
+🐘|大きい|おおきい|ookii|besar
+🐭|小さい|ちいさい|chiisai|kecil
+🆕|新しい|あたらしい|atarashii|baru
+🍰|美味しい|おいしい|oishii|enak
+🍽️|食べる|たべる|taberu|makan
+🥤|飲む|のむ|nomu|minum
+👀|見る|みる|miru|melihat
+🚶|行く|いく|iku|pergi
+🔴|赤い|あかい|akai|merah
+⚪|白い|しろい|shiroi|putih`.split("\n").map(l=>{const [e,k,y,r,m]=l.split("|");return{e,k,y,r,m}});
+
+// suara anak laki-laki: utamakan voice laki-laki Jepang bawaan perangkat
+let voice=null,male=false;
+const MALE=/ichiro|otoya|keita|takumi|hattori|ken\b|male|jab|jad/i,GOOD=/google|microsoft|kyoko|nanami|haruka|siri|premium|enhanced/i;
+function pick(){if(!('speechSynthesis' in window))return;const vs=speechSynthesis.getVoices().filter(v=>/^ja/i.test(v.lang.replace('_','-')));
+ voice=vs.find(v=>MALE.test(v.name))||vs.find(v=>GOOD.test(v.name))||vs[0]||null;male=!!(voice&&MALE.test(voice.name))}
+if('speechSynthesis' in window){pick();speechSynthesis.onvoiceschanged=pick}
+function say(t){if(!('speechSynthesis' in window))return;if(!voice)pick();speechSynthesis.cancel();
+ const u=new SpeechSynthesisUtterance(t);u.lang='ja-JP';if(voice)u.voice=voice;u.pitch=male?1.35:1.05;u.rate=.85;u.volume=1;speechSynthesis.speak(u)}
+// efek bunyi kuis (WebAudio, tanpa file)
+let AC;
+function unlockAudio(){try{AC=AC||new(window.AudioContext||window.webkitAudioContext)();if(AC.state==='suspended')AC.resume();}catch(e){}}
+document.addEventListener('touchstart',unlockAudio,{once:true,passive:true});
+document.addEventListener('pointerdown',unlockAudio,{once:true,passive:true});
+function sfx(ok){try{AC=AC||new(window.AudioContext||window.webkitAudioContext)();if(AC.state==='suspended')AC.resume();
+ const seq=ok?[[659,0],[784,.12],[1047,.24]]:[[220,0],[165,.18]];
+ seq.forEach(([f,d])=>{const o=AC.createOscillator(),g=AC.createGain(),t=AC.currentTime+d;
+  o.type=ok?'sine':'sawtooth';o.frequency.value=f;g.gain.setValueAtTime(.0001,t);g.gain.exponentialRampToValueAtTime(.25,t+.02);g.gain.exponentialRampToValueAtTime(.0001,t+(ok?.18:.3));
+  o.connect(g).connect(AC.destination);o.start(t);o.stop(t+.35)})}catch(e){}}
+
+const KAT=[...HIRA].map(c=>String.fromCharCode(c.charCodeAt(0)+96)).join("");
+const tabs=[["hira","🌸 Hiragana"],["kata","🍡 Katakana"],["vocab","🍓 Kosakata N5"],["quiz","🎀 Kuis"]];
+const nav=document.getElementById('nav'),main=document.getElementById('main');
+tabs.forEach(([id,l])=>{const b=document.createElement('button');b.textContent=l;b.id='t-'+id;b.onclick=()=>show(id);nav.appendChild(b)});
+
+function kana(set){
+ main.innerHTML=`<p class="hint">Tap huruf untuk mendengar suaranya 🔊</p><div class="grid">`+[...set].map((c,i)=>`<button class="k" onclick="say('${c}')"><b>${c}</b><span>${ROM[i]}</span></button>`).join("")+`</div>`}
+function vocab(){
+ main.innerHTML=`<h2>50 Kosakata N5</h2><p class="hint">Tap bagian yang buram untuk melihat romaji ✨</p><div class="vgrid">`+
+ VOC.map(v=>`<div class="v"><div class="e">${v.e}</div><div class="kj">${v.k}</div><div class="m">${v.m}</div>
+ <div class="row"><span class="yo">${v.y}</span><span class="sp" onclick="this.classList.toggle('on')">${v.r}</span>
+ <button class="pl" aria-label="Putar audio" onclick="say('${v.y}')">🔊</button></div></div>`).join("")+`</div>`}
+
+const PAL=[["#ffd6e7","#a8325f"],["#d9f0ff","#2b6a94"],["#e4ffd8","#3c7a2c"],["#fff1c9","#8a6310"],["#ecdcff","#69409a"],["#ffe0cc","#a14f20"]];
+function tune(seq,type,filt){try{AC=AC||new(window.AudioContext||window.webkitAudioContext)();if(AC.state==='suspended')AC.resume();
+ seq.forEach(([f,d,l,f2])=>{const o=AC.createOscillator(),g=AC.createGain(),fl=AC.createBiquadFilter(),t=AC.currentTime+d;
+  o.type=type;o.frequency.setValueAtTime(f,t);if(f2)o.frequency.exponentialRampToValueAtTime(f2,t+l);fl.type='lowpass';fl.frequency.value=filt;
+  g.gain.setValueAtTime(.0001,t);g.gain.exponentialRampToValueAtTime(.3,t+.05);g.gain.setValueAtTime(.3,t+l-.08);g.gain.exponentialRampToValueAtTime(.0001,t+l);
+  o.connect(fl).connect(g).connect(AC.destination);o.start(t);o.stop(t+l+.05)})}catch(e){}}
+// skor >= 20: fanfare ceria; skor < 20: terompet sedih (wah wah wah waaah)
+function fin(sc){sc>=20?tune([[523,0,.15],[659,.15,.15],[784,.3,.15],[1047,.45,.5],[784,.95,.12],[1047,1.07,.7]],'triangle',3500)
+ :tune([[311,0,.4],[294,.45,.4],[277,.9,.4],[262,1.35,1.2,196]],'sawtooth',900)}
+const OKS=['Sugoi! Benar banget! 🎉','Yatta! Pintar sekali! ✨','Subarashii! Kamu hebat! 🌟','Seikai! Pertahankan ya! 💖','Ii ne! Keren, lanjut terus! 🌸'];
+const NGS=['Zannen! Belum tepat 🥺','Oshii! Hampir benar 💪','Daijoubu, coba lagi nanti ya 🌷','Ups, jawabanmu masih keliru 🙈','Ganbatte! Kamu pasti bisa 🍀'];
+const rnd=a=>a[Math.random()*a.length|0];
+let score=0,qi=0,ord=[];
+function startQuiz(){score=0;qi=0;ord=VOC.map((_,i)=>i).sort(()=>Math.random()-.5);quiz()}
+function quiz(){
+ if(qi>=ord.length){main.innerHTML=`<div class="q"><h2>${score>=20?'Selesai! Hebat sekali! 🎉':'Selesai! Ayo coba lagi 💪'}</h2><p style="font-size:20px;font-weight:700">Skor akhir: ${score} / ${ord.length}</p><button class="nx">Ulangi 🌸</button></div>`;main.querySelector('.nx').onclick=startQuiz;fin(score);return}
+ const v=VOC[ord[qi]];
+ const wrong=[];while(wrong.length<3){const w=VOC[Math.random()*VOC.length|0];if(w.m!==v.m&&!wrong.includes(w.m))wrong.push(w.m)}
+ const o=[...wrong,v.m].sort(()=>Math.random()-.5),pal=[...PAL].sort(()=>Math.random()-.5);
+ main.innerHTML=`<div class="q"><div class="sc">Soal ${qi+1} / ${ord.length} · Skor ${score}</div><div class="kj">${v.k}</div>
+ <div style="font-weight:700;font-size:18px">${v.y}</div><div class="m" style="margin:2px 0 8px">${v.r}</div><button class="pl" aria-label="Putar audio" onclick="say('${v.y}')">🔊</button>
+ <div class="opts">`+o.map((t,i)=>`<button class="opt" style="background:${pal[i][0]};color:${pal[i][1]}" data-a="${t===v.m?1:0}">${t}</button>`).join("")+`</div><div id="fb"></div></div>`;
+ const bs=[...main.querySelectorAll('.opt')];
+ bs.forEach(b=>b.onclick=()=>{const ok=b.dataset.a==="1";if(ok)score++;sfx(ok);
+  bs.forEach(x=>{x.disabled=true;x.classList.add(x.dataset.a==="1"?'ok':'no')});
+  document.getElementById('fb').innerHTML=`<p style="font-weight:900;font-size:18px">${ok?rnd(OKS):rnd(NGS)+'<br><small>Jawaban benar: '+v.m+'</small>'}</p><button class="nx">${qi+1<ord.length?'Lanjut 🌸':'Lihat hasil 🌸'}</button>`;
+  main.querySelector('.nx').onclick=()=>{qi++;quiz()}})}
+
+function show(id){tabs.forEach(([t])=>document.getElementById('t-'+t).classList.toggle('on',t===id));
+ ({hira:()=>kana(HIRA),kata:()=>kana(KAT),vocab,quiz:startQuiz})[id]();scrollTo(0,0)}
+if(/iPhone|iPad|iPod/i.test(navigator.userAgent))document.getElementById('iosHint').style.display='block';
+show('hira');
+for(let i=0;i<14;i++){const p=document.createElement('span');p.className='petal';p.textContent='🌸';
+ p.style.cssText=`left:${Math.random()*100}vw;font-size:${12+Math.random()*14}px;animation-duration:${12+Math.random()*12}s;animation-delay:${-Math.random()*20}s`;document.body.appendChild(p)}
+</script></body></html>
